@@ -2,6 +2,7 @@
 
 - Angular tutorial from the official [website](https://angular.io/start).
 - How to Create an Angular Application Step by Step by [Alexander Rubanau](https://flatlogic.com/blog/how-to-create-angular-app-step-by-step/).
+- Complete Angular Tutorial For Beginners from [tektutorialshub](https://www.tektutorialshub.com/angular-tutorial/).
 
 ## Commands
 
@@ -28,6 +29,8 @@ Code scaffolding
 ```sh
 # directive|pipe|service|class|guard|interface|enum|module
 ng generate component component-name
+
+ng generate directive directive-name --skip-tests
 ```
 
 Build the project. The build artifacts will be stored in the `dist` directory.
