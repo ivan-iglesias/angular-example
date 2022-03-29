@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+
 import { products } from '../products';
+import { ProductView } from '../models/product.interface';
 
 @Component({
   selector: 'app-product-list',
@@ -15,5 +17,13 @@ export class ProductListComponent {
 
   onNotify() {
     window.alert('You will be notified when the product goes on sale');
+  }
+
+  notifyArguments(productName: string) {
+    window.alert(`You will be notified when the product '${productName}' goes on sale`);
+  }
+
+  notifyArgumentsJson(product: ProductView) {
+    window.alert(`You will be notified when the product '${product.name}' (${product.price}) goes on sale`);
   }
 }

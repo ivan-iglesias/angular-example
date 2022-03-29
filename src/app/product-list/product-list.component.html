@@ -19,7 +19,9 @@
 
   <app-product-alerts
     [product]="product"
-    (notify)="onNotify()">
+    (notify)="onNotify()"
+    (notifyArguments)="notifyArguments($event)"
+    (notifyArgumentsJson)="notifyArgumentsJson($event)">
   </app-product-alerts>
 
 </div>
