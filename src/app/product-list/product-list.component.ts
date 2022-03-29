@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CurrencyPipe } from '@angular/common';
 
 import { products } from '../products';
 import { ProductView } from '../models/product.interface';
@@ -10,6 +11,10 @@ import { ProductView } from '../models/product.interface';
 })
 export class ProductListComponent {
   products = products;
+
+  constructor(
+    private currencyPipe: CurrencyPipe
+  ) { }
 
   share() {
     window.alert('The product has been shared!');
@@ -24,6 +29,8 @@ export class ProductListComponent {
   }
 
   notifyArgumentsJson(product: ProductView) {
-    window.alert(`You will be notified when the product '${product.name}' (${product.price}) goes on sale`);
+    const productPrice = this.currencyPipe.transform(product.price, 'USD');
+
+    window.alert(`You will be notified when the product '${product.name}' (${productPrice}) goes on sale`);
   }
 }
